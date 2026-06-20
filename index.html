@@ -38,6 +38,12 @@
         }
     </script>
     <style>
+/* إجبار الـ Tooltip القديم على الظهور الدائم وإلغاء شروط الاختفاء أو الهوفر */
+.whatsapp-float .permanent-show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(0) !important; /* يحافظ على تموضعه الأفقي القديم بجانب الزر */
+}
 @keyframes draw { to { stroke-dashoffset: 0; } }
 @keyframes bounce-subtle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
 .animate-bounce-subtle { animation: bounce-subtle 2s infinite ease-in-out; }
@@ -112,7 +118,7 @@
     <span class="text-slate-400">إلى سوق العمل</span>
 </h1>
    <p class="max-w-2xl mx-auto text-base md:text-xl text-slate-500 leading-[1.7] mb-16 font-light tracking-wide text-center">
-   برنامج تدريبي مهيكل يبدأ معك من <span class="text-slate-900 font-semibold">الصفر المطلق</span>. <br> 
+   برنامج تدريبي  يبدأ معك من <span class="text-slate-900 font-semibold">الصفر إلى الاحتراف</span>. <br> 
 لا نحتاج منك معرفة مسبقة، فقط شغفك لنتحرك معاً  <br> 
   خطوة بــــخطوة    
 </p>
@@ -163,7 +169,7 @@
                         <div>
                             <h3 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 transition-colors group-hover:text-[#6b46c1]">خوف البدايات</h3>
                             <p class="text-slate-500 leading-relaxed text-sm md:text-base">
-هل تخشى أن يكون تطوير الويب معقداً أو يتطلب خلفية برمجية صعبة؟ سنبدأ معك بتفكيك مفاهيم بناء المواقع من الصفر المطلق وبأسلوب تفاعلي، لتكتشف أن تصميم وبرمجة الواجهات ممتع ومنطقي عندما يُشرح بالطريقة الصحيحة وبدون تعقيد.                          </p>
+هل تخشى أن يكون تطوير الويب معقداً أو يتطلب خلفية برمجية صعبة؟ سنبدأ معك بتفكيك مفاهيم بناء المواقع من الصفر  وبأسلوب تفاعلي، لتكتشف أن تصميم وبرمجة الواجهات ممتع ومنطقي عندما يُشرح بالطريقة الصحيحة وبدون تعقيد.                          </p>
                         </div>
                         <div class="text-6xl font-black text-slate-100 mt-6 group-hover:text-purple-50 transition-colors">01</div>
                     </div>
@@ -386,7 +392,7 @@
                             </div>
                             <div>
                                 <h4 class="text-sm font-bold text-brand-dark">مدة البرنامج</h4>
-                                <p class="text-xs md:text-sm text-brand-gray">70 يوماً من البناء المكثف</p>
+                                <p class="text-xs md:text-sm text-brand-gray">80 ساعة تدريبية وتطبيقية مكثفة</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3">
@@ -409,15 +415,7 @@
                         </div>
                     </div>
                     <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="bg-brand-dark text-white w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-sm">
-                                <i class="fas fa-fire"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-bold text-brand-dark">مدة التسجيل</h4>
-                                <p class="text-xs md:text-sm text-brand-gray">التسجيل مفتوح لمدة 7 أيام فقط</p>
-                            </div>
-                        </div>
+                     
                         <div class="flex items-center gap-3">
                             <div class="bg-brand-dark text-white w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-sm">
                                 <i class="fas fa-users"></i>
@@ -433,7 +431,7 @@
                             </div>
                             <div>
                                 <h4 class="text-sm font-bold text-brand-dark">بناء المشاريع</h4>
-                                <p class="text-xs md:text-sm text-brand-gray">تطوير صفحات هبوط حقيقية مخصصة لمعرض أعمالك</p>
+                                <p class="text-xs md:text-sm text-brand-gray">بنهاية الكورس ستكون قادر على انشاء صفحة هبوط كهذا الصفحة </p>
                             </div>
                         </div>
                     </div>
@@ -499,7 +497,7 @@
                     </div>
                 </div>
                 <p class="text-slate-500 text-sm md:text-base leading-relaxed font-light mt-4">
-                    نعم، تماماً! المسار صُمم خصيصاً ليبدأ معك من الصفر المطلق. لا نحتاج منك أي معرفة مسبقة، فقط جهاز كمبيوتر وشغف للتعلم، وسنتحرك معاً خطوة بخطوة من أول سطر كود حتى الاحتراف والتطبيق العملي.
+                    نعم، تماماً! المسار صُمم خصيصاً ليبدأ معك من الصفر لا نحتاج منك أي معرفة مسبقة، فقط جهاز كمبيوتر وشغف للتعلم، وسنتحرك معاً خطوة بخطوة من أول سطر كود حتى الاحتراف والتطبيق العملي.
                 </p>
             </div>
 
@@ -562,7 +560,7 @@
             
             <!-- تم تصغير الخط هنا من text-5xl إلى text-xl على الجوال و md:text-4xl على الشاشات الكبيرة -->
             <h2 class="text-xl md:text-4xl font-extrabold mb-6 text-white transition-transform duration-500 group-hover:scale-105 leading-tight">
-                هل تريد دخول عالم تطوير الويب <br class="block md:hidden"> ؟
+                هل تريد دخول عالم تطوير الويب؟ <br class="block md:hidden"> 
                 <span class="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-200 to-slate-400 text-lg md:text-3xl">
                     هذه هي فرصتك الحقيقية للبداية
                 </span>
