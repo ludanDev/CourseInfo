@@ -312,31 +312,44 @@
             }
         });
 
-            const data = [
-            { title: "إتقان أساسيات Bootstrap من الصفر", desc: "كيف تبني واجهات بشكل أسرع وأكثر تنظيمًا مع مراجعة الأساسيات المهمة." },
-            { title: "التطبيق على مشروع عملي حقيقي", desc: "إنشاء Landing Page أو Company Profile احترافي من اختيارك." },
-            { title: "تنظيم وهيكلة الكود البرمجي", desc: "ترتيب العمل بصورة أوضح وأسهل لفهم الربط بين ما تعلمته والنتيجة العملية." },
-            { title: "العرض الاحترافي للمشاريع", desc: "تعلم كيفية عرض عملك بصورة تجذب العملاء وتبرز مهاراتك كالمحترفين." }
-        ];
+         const data = [
+    { 
+        title: "تأسيس كامل في HTML5 & CSS3", 
+        desc: "تعلّم هيكلة وتصميم صفحات الويب من الصفر المطلق وبناء واجهات متجاوبة بالكامل مع شاشات الهواتف والـ Desktop." 
+    },
+    { 
+        title: "تفعيل التفاعل الذكي عبر JavaScript", 
+        desc: "فهم المنطق البرمجي السليم وكيفية إضافة الحيوية والتحكم في عناصر موقعك لجعل واجهاتك تفاعلية بالكامل." 
+    },
+    { 
+        title: "السرعة والإنتاجية باستخدام Bootstrap", 
+        desc: "كيف تبني وتنسق صفحات موقعك بشكل أسرع وأكثر تنظيماً ، لتوفر وقتك وجهدك البرمجي." 
+    },
+    { 
+        title: "بناء معرض أعمال حقيقي متكامل", 
+        desc: "لن تكتفي بالنظر؛ ستطبق على مشاريع وصفحات هبوط (Landing Pages) حقيقية تبرز مهاراتك وتجذب العملاء ." 
+    }
+];
 
         const listContainer = document.getElementById('features-list');
 
-        data.forEach(item => {
-            const li = document.createElement('li');
-            li.className = "flex items-start gap-5 group";
-            li.innerHTML = `
-                <div class="flex-shrink-0 mt-1 transition-transform group-hover:scale-110">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-slate-900  transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-slate-900 tracking-tight  transition-colors">${item.title}</h3>
-                    <p class="text-slate-600 text-sm md:text-base mt-2 leading-relaxed font-light">${item.desc}</p>
-                </div>
-            `;
-            listContainer.appendChild(li);
-        });
+       data.forEach(item => {
+    const li = document.createElement('li');
+    li.className = "flex items-start gap-5 group";
+    li.innerHTML = `
+        <div class="flex-shrink-0 mt-1 transition-transform group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 md:w-8 md:h-8 text-slate-900 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+        </div>
+        <div>
+            <!-- هنا تم تصغير الخط ليصبح متجاوباً text-lg على الجوال و md:text-xl على الشاشة الكبيرة -->
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 tracking-tight transition-colors">${item.title}</h3>
+            <p class="text-slate-600 text-xs md:text-base mt-2 leading-relaxed font-light">${item.desc}</p>
+        </div>
+    `;
+    listContainer.appendChild(li);
+});
 
         console.log('Ludan webpage loaded successfully with all interactive features!');
 // ==========================================================
@@ -462,3 +475,39 @@ function connectWhatsAppButtons() {
 connectWhatsAppButtons();
 setTimeout(showSocialProof, 3000);
 setInterval(showSocialProof, 30000);
+
+
+// Fixed Target Countdown Timer
+function initFixedCountdown() {
+    // اضبطي هنا تاريخ ووقت إغلاق التسجيل الحقيقي للدفعة بتاعتك بدقة
+    // الصيغة: "Year-Month-DayTHour:Minute:Second"
+    const TARGET_DATE = new Date("2026-06-27T23:59:59").getTime(); 
+
+    const timerInterval = setInterval(function() {
+        const now = new Date().getTime();
+        const diff = TARGET_DATE - now;
+
+        if (diff <= 0) {
+            clearInterval(timerInterval);
+            // اختياري: ماذا يحدث لو انتهى الوقت؟ يمكن كتابة جملة "انتهى التسجيل"
+            const timerContainer = document.getElementById('timer-days').parentElement.parentElement;
+            if (timerContainer) {
+                timerContainer.innerHTML = "<span class='text-red-500 font-bold font-ibm-plex-sans-arabic text-sm'>عذراً، انتهت مدة الخصم وتم إغلاق باب التسجيل للدفعة الحالية!</span>";
+            }
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('timer-days').textContent = String(days).padStart(2, '0');
+        document.getElementById('timer-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('timer-minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('timer-seconds').textContent = String(seconds).padStart(2, '0');
+    }, 1000);
+}
+
+// تشغيل العداد
+document.addEventListener('DOMContentLoaded', initFixedCountdown);
